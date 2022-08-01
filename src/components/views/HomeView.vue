@@ -31,7 +31,7 @@
           </p>
         </section>
       </div>
-      <div class="wall-3">
+      <div class="wall-1">
         <section class="wall__content">
           <p>Hi! my name is Erisc Valencia Mosquera</p>
           <p>
@@ -41,7 +41,7 @@
           </p>
         </section>
       </div>
-      <div class="wall-4">
+      <div class="wall-2">
         <section class="wall__content">
           <p>Hi! my name is Erisc Valencia Mosquera</p>
           <p>
@@ -63,11 +63,12 @@ export default defineComponent({
 });
 </script>
 
-<style scoped>
-section,
-div {
-  border: 1px solid gold;
-}
+<style lang="scss" scoped>
+@import '@/assets/styles/main.scss';
+
+// section, div {
+//   border: 1px solid gold;
+// }
 
 .home {
   display: flex;
@@ -77,6 +78,7 @@ div {
   height: 100vh;
   width: 18vw;
   background: rgb(145, 175, 128);
+  position:fixed;
 }
 
 .main__nav{
@@ -87,9 +89,6 @@ div {
   display: flex;
   justify-content: center;
   align-items: center;
-
-  border: 1px solid red;
-
 }
 
 .info__section{
@@ -98,8 +97,8 @@ div {
   /* overflow: hidden; */
 }
 
-.wall-1, .wall-2, .wall-3, .wall-4 {
-  height: 100%;
+.wall-1, .wall-2 {
+  height: 100vh;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -108,6 +107,8 @@ div {
 
 .wall__content{
   width: 60%;
+  padding: 1rem;
+  border: 1px solid red;
 }
 
 </style>
