@@ -1,19 +1,20 @@
 <template>
-  <div class="theme-green">
+  <div class="theme-blue">
     <aside class="aside_menu">
       <nav class="main__nav">
         <ul main="main__menu">
-          <li>Bienvenido</li>
-          <li>Quien soy</li>
-          <li>Que hago</li>
-          <li>Hacemos un proyecto?</li>
+          <li>BIENVENIDO</li>
+          <li>QUIEN SOY</li>
+          <li>QUE HAGO</li>
+          <li>HACEMOS UN PROYECTO?</li>
         </ul>
       </nav>
     </aside>
     <div class="info-section">
       <div class="wall-1">
-        <section class="wall__content">
-          <p>Hi! my name is Erisc Valencia Mosquera</p>
+        <section class="wall-content">
+          <h1 class="title-text">Erisc</h1>
+          <h2 class="subtitle-text">Valencia Mosquera</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis error dicta incidunt
             doloremque rem magnam consectetur earum tempore obcaecati suscipit omnis ducimus,
@@ -22,17 +23,23 @@
         </section>
       </div>
       <div class="wall-2">
-        <section class="wall__content">
-          <p>Hi! my name is Erisc Valencia Mosquera</p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis error dicta incidunt
-            doloremque rem magnam consectetur earum tempore obcaecati suscipit omnis ducimus,
-            explicabo, perspiciatis ratione accusantium tempora quam, dolorem voluptatibus!
-          </p>
+        <section class="wall-content">
+          <h2 class="subtitle-text">Quien soy</h2>
+          <div class="card-container-section">
+            <section class="card-item">
+              <img src="" alt="">
+            </section>
+            <section class="card-item">
+              <img src="" alt="">
+            </section>
+            <section class="card-item">
+              <img src="" alt="">
+            </section>
+          </div>
         </section>
       </div>
       <div class="wall-1">
-        <section class="wall__content">
+        <section class="wall-content">
           <p>Hi! my name is Erisc Valencia Mosquera</p>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis error dicta incidunt
@@ -42,7 +49,7 @@
         </section>
       </div>
       <div class="wall-2">
-        <section class="wall__content">
+        <section class="wall-content">
           <p>Hi! my name is Erisc Valencia Mosquera</p>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis error dicta incidunt
@@ -63,12 +70,12 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss" scoped>
-@import "@/assets/styles/main.scss";
+<style lang="scss">
+@import '@/assets/styles/main.scss';
 
 .aside_menu {
-  height: 100vh;
-  width: 18vw;
+  height: 100%;
+  width: 20%;
   background: var(--color-wall-1);
   position: fixed;
 }
@@ -76,14 +83,13 @@ export default defineComponent({
 .main__nav {
   height: 100%;
   width: 100%;
-  display:flex;
-  justify-content: center;
-  align-items: center;
+  @include center-items();
 }
+
 .info-section {
-  margin-left: 18vw;
+  margin-left: 20%;
   height: 100vh;
-  width: 82vw;
+  width: 80%;
   z-index: 10;
 }
 
@@ -99,11 +105,38 @@ export default defineComponent({
   height: 100%;
   width: 100%;
   @include center-items();
-  color: var(--font-color-2);
+  color: var(--font-color-1);
   background-color: var(--color-wall-3);
 }
-.wall__content {
-  border: var(--box-viewer);
-  width: 60%;
+
+.wall-content {
+  // border: var(--box-viewer);
+  width: 80%;
 }
+
+.title-text{
+  font-size: var(--titles-big);
+  @include reset-padding-margin();
+}
+
+.subtitle-text{
+  font-size: var(--subttitles) ;
+}
+
+.card-container-section{
+  border: var(--box-viewer);
+  padding: var(--padding-boxes);
+  display: grid;
+  grid-template-columns: repeat(3, 310px);
+  grid-template-rows: 1fr;
+  justify-content: center;
+  gap: var(--padding-boxes);
+}
+
+.card-item{
+  height: 250px;
+  border: var(--box-viewer);
+  border-radius: var(--border-radius);
+}
+
 </style>

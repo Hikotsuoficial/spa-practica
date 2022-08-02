@@ -1,7 +1,13 @@
 /* funciones mixins */
 
+// for centrate elements
 @mixin center-items(){
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+//for reset to 5px margins and paddgin
+@mixin reset-padding-margin(){
+    line-height:.1rem;
 }
