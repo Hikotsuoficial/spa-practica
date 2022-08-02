@@ -1,17 +1,17 @@
 <template>
   <div class="theme-blue">
-    <aside class="aside_menu">
-      <nav class="main__nav">
-        <ul main="main__menu">
-          <li>BIENVENIDO</li>
-          <li>QUIEN SOY</li>
-          <li>QUE HAGO</li>
-          <li>HACEMOS UN PROYECTO?</li>
+    <aside class="aside-menu">
+      <nav class="main-nav">
+        <ul class="main-menu">
+          <li class="nav-link"><a href="#wellcome">BIENVENIDO</a></li>
+          <li class="nav-link"><a href="#cards">QUIEN SOY</a></li>
+          <li class="nav-link"><a href="#whatwedo">QUE HAGO</a></li>
+          <li class="nav-link"><a href="#contact">HACEMOS UN PROYECTO?</a></li>
         </ul>
       </nav>
     </aside>
     <div class="info-section">
-      <div class="wall-1">
+      <div class="wall-1" id="wellcome">
         <section class="wall-content">
           <h1 class="title-text">Erisc</h1>
           <h2 class="subtitle-text">Valencia Mosquera</h2>
@@ -22,8 +22,8 @@
           </p>
         </section>
       </div>
-      <div class="wall-2">
-        <section class="wall-content">
+      <div class="wall-2" id="cards">
+        <section class="wall-content" >
           <h2 class="subtitle-text">Quien soy</h2>
           <div class="card-container-section">
             <section class="card-item">
@@ -38,7 +38,7 @@
           </div>
         </section>
       </div>
-      <div class="wall-1">
+      <div class="wall-1" id="whatwedo">
         <section class="wall-content">
           <p>Hi! my name is Erisc Valencia Mosquera</p>
           <p>
@@ -48,7 +48,7 @@
           </p>
         </section>
       </div>
-      <div class="wall-2">
+      <div class="wall-2" id="contact">
         <section class="wall-content">
           <p>Hi! my name is Erisc Valencia Mosquera</p>
           <p>
@@ -73,17 +73,47 @@ export default defineComponent({
 <style lang="scss">
 @import '@/assets/styles/main.scss';
 
-.aside_menu {
+.theme-blue{
+  display: grid;
+}
+
+.aside-menu {
   height: 100%;
   width: 20%;
   background: var(--color-wall-1);
   position: fixed;
 }
 
-.main__nav {
+.main-nav {
   height: 100%;
   width: 100%;
   @include center-items();
+}
+
+.main-menu{
+  list-style: none;
+  padding: var(--padding-boxes);
+
+}
+
+.main-menu .nav-link{
+  font-size: 1.3rem;
+  margin-top: 2.1rem;
+  margin-left: 3rem;
+  text-align: right;
+  font-weight: 700;
+  border-bottom:2px solid var(--color-wall-1);
+  text-shadow: var(--text-shadow-1);
+  padding: 3px;
+
+  &:hover{
+    border-bottom:2px solid var(--color-wall-3);
+  }
+}
+
+.nav-link a{
+  text-decoration: none;
+  color: var(--font-color-1);
 }
 
 .info-section {

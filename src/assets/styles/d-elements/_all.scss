@@ -1,4 +1,8 @@
 /* estilos especificos para etiquetas HTML */
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     font-family:var(--principal-font);
 }
