@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="theme-green">
     <aside class="aside_menu">
       <nav class="main__nav">
         <ul main="main__menu">
@@ -10,7 +10,7 @@
         </ul>
       </nav>
     </aside>
-    <div class="info__section">
+    <div class="info-section">
       <div class="wall-1">
         <section class="wall__content">
           <p>Hi! my name is Erisc Valencia Mosquera</p>
@@ -64,51 +64,46 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/styles/main.scss';
-
-// section, div {
-//   border: 1px solid gold;
-// }
-
-.home {
-  display: flex;
-}
+@import "@/assets/styles/main.scss";
 
 .aside_menu {
   height: 100vh;
   width: 18vw;
-  background: rgb(145, 175, 128);
-  position:fixed;
+  background: var(--color-wall-1);
+  position: fixed;
 }
 
-.main__nav{
-
+.main__nav {
   height: 100%;
   width: 100%;
-
-  display: flex;
+  display:flex;
   justify-content: center;
   align-items: center;
 }
-
-.info__section{
+.info-section {
+  margin-left: 18vw;
   height: 100vh;
-  width: 100vw;
-  /* overflow: hidden; */
+  width: 82vw;
+  z-index: 10;
 }
 
-.wall-1, .wall-2 {
-  height: 100vh;
+.wall-1 {
+  height: 100%;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include center-items();
+  color: var(--font-color-1);
+  background-color: var(--color-wall-4);
 }
 
-.wall__content{
+.wall-2 {
+  height: 100%;
+  width: 100%;
+  @include center-items();
+  color: var(--font-color-2);
+  background-color: var(--color-wall-3);
+}
+.wall__content {
+  border: var(--box-viewer);
   width: 60%;
-  padding: 1rem;
-  border: 1px solid red;
 }
-
 </style>

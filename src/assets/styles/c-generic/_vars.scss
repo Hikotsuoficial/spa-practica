@@ -1,3 +1,28 @@
+// definir las bariables y temas(colores para el documento) para el documento
+
 :root{
-    --inner-margin: 1rem;
+    --padding-boxes: 1rem;
+
+    --principal-font: 'calibri', 'tahoma'; 
+    --box-viewer: 1px solid red;
+}
+
+
+
+.theme-green{
+    --color-wall-1: #389485;
+    --color-wall-2: #8de4af;
+    --color-wall-3: #d7d8d8;
+    --color-wall-4: #33363a;
+
+    --font-color-1: #eeeeee;
+    --font-color-2: #33363a;
+}
+
+.theme-rose{
+    --color-wall-1: #303030;
+    --color-wall-2: #8de4af;
+    --color-wall-3: #eef6e1;
+    
+    --font-color-1: #eeeeee;
 }
