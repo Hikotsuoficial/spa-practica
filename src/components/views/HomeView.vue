@@ -76,18 +76,18 @@ export default defineComponent({
 .theme-blue {
   // display: grid;
 
-  @media screen and (max-width: 1024px) {
-    grid-template-columns: 1fr;
-  }
-  @media screen and (max-width: 768px) {
-    grid-template-columns: 1fr;
-  }
-  @media screen and (max-width: 425px) {
-    grid-template-columns: 1fr;
-  }
-  @media screen and (max-width: 320px) {
-    grid-template-columns: 1fr;
-  }
+  // @media screen and (max-width: 1024px) {
+  //   grid-template-columns: 1fr;
+  // }
+  // @media screen and (max-width: 768px) {
+  //   grid-template-columns: 1fr;
+  // }
+  // @media screen and (max-width: 425px) {
+  //   grid-template-columns: 1fr;
+  // }
+  // @media screen and (max-width: 320px) {
+  //   grid-template-columns: 1fr;
+  // }
 }
 
 .aside-menu {
@@ -97,9 +97,14 @@ export default defineComponent({
   position: fixed;
   z-index: 12;
 
+  @media screen and (max-width: 1440px) {
+    transition: 0.2s;
+  }
+
   @media screen and (max-width: 1024px) {
     height: 80px;
     width: 100%;
+    transition: 0.2s;
   }
 }
 
