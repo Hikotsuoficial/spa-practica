@@ -13,6 +13,10 @@
     <div class="info-section">
       <div class="wall-1" id="wellcome">
         <section class="wall-content">
+          <div>
+            <p>aqui esta el resto</p>
+          </div>
+          <div class="wall-item-first">
           <h1 class="title-text">Erisc</h1>
           <h2 class="subtitle-text">Valencia Mosquera</h2>
           <p>
@@ -20,6 +24,7 @@
             doloremque rem magnam consectetur earum tempore obcaecati suscipit omnis ducimus,
             explicabo, perspiciatis ratione accusantium tempora quam, dolorem voluptatibus!
           </p>
+          </div>
         </section>
       </div>
       <div class="wall-2" id="cards">
@@ -73,23 +78,6 @@ export default defineComponent({
 <style lang="scss">
 @import "@/assets/styles/main.scss";
 
-.theme-blue {
-  // display: grid;
-
-  // @media screen and (max-width: 1024px) {
-  //   grid-template-columns: 1fr;
-  // }
-  // @media screen and (max-width: 768px) {
-  //   grid-template-columns: 1fr;
-  // }
-  // @media screen and (max-width: 425px) {
-  //   grid-template-columns: 1fr;
-  // }
-  // @media screen and (max-width: 320px) {
-  //   grid-template-columns: 1fr;
-  // }
-}
-
 .aside-menu {
   height: 100vh;
   width: 20%;
@@ -123,7 +111,8 @@ export default defineComponent({
   @media screen and (max-width: 1024px) {
     display: flex;
     justify-content:center;
-    align-items: flex-end;
+    transition: 0.3s;
+
   }
 }
 
@@ -136,6 +125,7 @@ export default defineComponent({
   border-bottom: 3px solid var(--color-wall-1);
   transition: 0.3s;
 
+  @media screen and (max-width: 1440px) {
   &:hover {
     background: linear-gradient(
       90deg,
@@ -144,16 +134,15 @@ export default defineComponent({
       rgba(51, 54, 58, 1) 100%
     );
   }
+  }
 
   @media screen and (max-width: 1024px) {
-  &:hover {
-    background: linear-gradient(
-      180deg,
-      rgba(36, 104, 143, 1) 0%,
-      rgba(51, 54, 58, 1) 50%,
-      rgba(51, 54, 58, 1) 100%
-    );
-  }
+    font-weight: 600;
+
+    &:hover{
+    background: none;
+    border-bottom: 0;
+    }
   }
 }
 
@@ -164,18 +153,30 @@ export default defineComponent({
   font-size: 1.2rem;
   letter-spacing: 0.6px;
 
-  &::after {
+  @media screen and (max-width: 1024px) {
+
+  font-size: 1rem;
+  position: relative;
+
+  &:before {
     content: "";
-    background: red;
+    background: linear-gradient(
+      90deg,
+      rgba(36, 104, 143, 1) 0%,
+      rgba(51, 54, 58, 1) 50%,
+      rgba(51, 54, 58, 1) 100%
+    );
+    position: absolute;
     height: 5px;
-    width: 10%;
-    right: 0;
-    bottom: -10px;
-    transition: 0.4s;
+    width: 0%;
+    right: 0px;
+    bottom: -8px;
+    transition: 0.3s;
   }
 
-  &:after::after {
+  &:hover::before {
     width: 100%;
+  }
   }
 
   @media screen and (max-width: 768px) {
@@ -188,8 +189,13 @@ export default defineComponent({
   height: 100vh;
   z-index: 10;
 
+  @media screen and (max-width: 1440px) {
+    transition:0.3s;
+  }
+
   @media screen and (max-width: 1024px) {
     margin-left: 0;
+    transition:0.3s;
   }
 }
 
@@ -212,6 +218,17 @@ export default defineComponent({
 .wall-content {
   // border: var(--box-viewer);
   width: 80%;
+  display: flex;
+  flex-direction: column;
+  border: var(--box-viewer);
+
+  @media screen and (max-width: 1024px) {
+    transition:0.2s;
+  }
+
+  @media screen and (max-width: 768px) {
+    transition:0.2s;
+  }
 }
 
 .title-text {
