@@ -4,5 +4,9 @@ html{
 }
 
 body{
-    font-family:var(--principal-font);
+    font-family:var(--font-sans);
+}
+
+.label{
+    display: block;
 }

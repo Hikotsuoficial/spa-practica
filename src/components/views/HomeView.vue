@@ -11,20 +11,25 @@
       </nav>
     </aside>
     <div class="info-section">
+      <div class="social-media-container">
+        <p>comida para palomas</p>
+      </div>
       <div class="wall-1" id="wellcome">
         <section class="wall-content">
           <div>
-            <p>aqui esta el resto</p>
+            <p class="grettings">Hola, mi nombre es</p>
+            <!-- <img class="photo-perfil" src="@/assets/media/img/photo-perfil.jpg" alt=""> -->
           </div>
           <div class="wall-item-first">
           <h1 class="title-text">Erisc</h1>
-          <h2 class="subtitle-text">Valencia Mosquera</h2>
-          <p>
+          <p class="text-description">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis error dicta incidunt
             doloremque rem magnam consectetur earum tempore obcaecati suscipit omnis ducimus,
             explicabo, perspiciatis ratione accusantium tempora quam, dolorem voluptatibus!
           </p>
+          <button class="btn-wellcome">Disfruta mi web!</button>
           </div>
+
         </section>
       </div>
       <div class="wall-2" id="cards">
@@ -55,12 +60,7 @@
       </div>
       <div class="wall-2" id="contact">
         <section class="wall-content">
-          <p>Hi! my name is Erisc Valencia Mosquera</p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis error dicta incidunt
-            doloremque rem magnam consectetur earum tempore obcaecati suscipit omnis ducimus,
-            explicabo, perspiciatis ratione accusantium tempora quam, dolorem voluptatibus!
-          </p>
+          <ContactForm></ContactForm>
         </section>
       </div>
     </div>
@@ -69,9 +69,13 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import ContactForm from '@/components/molecules/ContactForm.vue';
 
 export default defineComponent({
   name: 'HomeView',
+  components: {
+    ContactForm,
+  },
 });
 </script>
 
@@ -119,21 +123,21 @@ export default defineComponent({
 .main-menu .nav-link {
   // margin-left: 3rem;
   text-align: right;
-  font-weight: 700;
   // text-shadow: var(--text-shadow-1);
-  padding: 18px;
-  border-bottom: 3px solid var(--color-wall-1);
   transition: 0.3s;
+  padding: 18px;
 
-  @media screen and (max-width: 1440px) {
   &:hover {
     background: linear-gradient(
       90deg,
-      rgba(36, 104, 143, 1) 0%,
-      rgba(51, 54, 58, 1) 50%,
-      rgba(51, 54, 58, 1) 100%
+      rgba(13, 33, 59, 1) 0%,
+      rgba(34, 37, 41, 1) 50%,
+      rgba(34, 37, 41, 1) 100%
     );
+  transition: background 0.3s;
   }
+
+  @media screen and (max-width: 1440px) {
   }
 
   @media screen and (max-width: 1024px) {
@@ -143,20 +147,32 @@ export default defineComponent({
     background: none;
     border-bottom: 0;
     }
+
+  &:active{
+      background: linear-gradient(
+      90deg,
+      rgba(13, 33, 59, 1) 0%,
+      rgba(34, 37, 41, 1) 50%,
+      rgba(34, 37, 41, 1) 100%
+    );
+  }
   }
 }
 
 .nav-link a {
+  font-family: var(--font-mono);
+  font-weight: 700;
   text-decoration: none;
   color: var(--font-color-1);
   // position: relative;
-  font-size: 1.2rem;
-  letter-spacing: 0.6px;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
 
   @media screen and (max-width: 1024px) {
 
   font-size: 1rem;
   position: relative;
+  letter-spacing: 0.7px;
 
   &:before {
     content: "";
@@ -168,15 +184,16 @@ export default defineComponent({
     );
     position: absolute;
     height: 5px;
-    width: 0%;
+    width: 0;
     right: 0px;
-    bottom: -8px;
+    bottom: -12px;
     transition: 0.3s;
   }
 
   &:hover::before {
     width: 100%;
   }
+
   }
 
   @media screen and (max-width: 768px) {
@@ -220,7 +237,10 @@ export default defineComponent({
   width: 80%;
   display: flex;
   flex-direction: column;
-  border: var(--box-viewer);
+  padding: var(--padding-boxes);
+  border-radius: var(--border-radius);
+  // box-shadow: var(--box-shadow);
+  // border: var(--box-viewer);
 
   @media screen and (max-width: 1024px) {
     transition:0.2s;
@@ -231,13 +251,58 @@ export default defineComponent({
   }
 }
 
+.wall-content .photo-perfil{
+  width: 220px;
+  border-radius: 50%;
+  border: 5px solid whitesmoke;
+}
+
+.grettings{
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  letter-spacing: -0.2px;
+}
+
 .title-text {
-  font-size: var(--titles-big);
+  font-size: 5.5rem;
+  font-weight:700;
+  letter-spacing: -2px;
   @include reset-padding-margin();
 }
 
 .subtitle-text {
-  font-size: var(--subttitles);
+  font-size: 1rem;
+}
+
+.text-description{
+width: 60%;
+letter-spacing: 0.2px;
+color: var(--font-color-2);
+
+}
+
+.btn-wellcome{
+  margin: 20px 0;
+  height: 60px;
+  padding: 0 30px;
+  background: none;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--color-wall-3);
+  border: 2px solid var(--color-wall-3);
+  border-radius: var(--border-radius);
+  font-family: var(--font-mono);
+
+  &:hover{
+    background: var(--btn-hover-color);
+  }
+}
+// SEccion social media
+
+.social-media-container{
+  position:absolute;
+  height: 60px;
+  color: var(--font-color-2)
 }
 
 .card-container-section {
