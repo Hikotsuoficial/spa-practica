@@ -46,14 +46,16 @@
 <style lang="scss" scoped>
 @import '@/assets/styles/main.scss';
 
-.order-form {
-  list-style: none;
-}
 .form-container{
     @media screen and (max-width: 1024px) {
         transition:0.2s;
         width: 100%;
-        @include center-items()
+        @include center-items();
+      }
+
+    @media screen and (max-width: 320px) {
+        transition:0.2s;
+        @include center-items();
       }
 }
 .label {
@@ -108,9 +110,19 @@
     background: var(--btn-hover-color);
   }
 
+  @media screen and (max-width: 1024px) {
+    transition:0.2s;
+    width: 56%;
+  }
+
   @media screen and (max-width: 768px) {
     transition:0.2s;
     width: 40%;
+  }
+
+  @media screen and (max-width: 425px) {
+    transition:0.2s;
+    width: 56%;
   }
 
   @media screen and (max-width: 320px) {

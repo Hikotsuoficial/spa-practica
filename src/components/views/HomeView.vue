@@ -2,7 +2,10 @@
   <div class="theme-blue">
     <aside class="aside-menu">
       <nav class="main-nav">
-        <ul class="main-menu">
+      <div id="toogle-menu" class="toogle-menu">
+        <!-- <img src="@/assets/media/img/logo.png" alt=""> -->
+      </div>
+        <ul id="main-menu" class="main-menu">
           <li class="nav-link"><a href="#wellcome">BIENVENIDO</a></li>
           <li class="nav-link"><a href="#cards">QUIEN SOY</a></li>
           <li class="nav-link"><a href="#whatwedo">QUE HAGO</a></li>
@@ -11,25 +14,12 @@
       </nav>
     </aside>
     <div class="info-section">
-      <div class="social-media-container">
+      <!-- <div class="social-media-container">
         <p>comida para palomas</p>
-      </div>
+      </div> -->
       <div class="wall-1" id="wellcome">
         <section class="wall-content">
-          <div>
-            <p class="grettings">Hola, mi nombre es</p>
-            <!-- <img class="photo-perfil" src="@/assets/media/img/photo-perfil.jpg" alt=""> -->
-          </div>
-          <div class="wall-item-first">
-          <h1 class="title-text">Erisc</h1>
-          <p class="text-description">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis error dicta incidunt
-            doloremque rem magnam consectetur earum tempore obcaecati suscipit omnis ducimus,
-            explicabo, perspiciatis ratione accusantium tempora quam, dolorem voluptatibus!
-          </p>
-          <button class="btn-wellcome">Disfruta mi web!</button>
-          </div>
-
+          <WellCome></WellCome>
         </section>
       </div>
       <div class="wall-2" id="cards">
@@ -70,11 +60,17 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import ContactForm from '@/components/molecules/ContactForm.vue';
+import WellCome from '@/components/molecules/WellCome.vue';
 
 export default defineComponent({
   name: 'HomeView',
+  data() {
+    return {
+      show: 'main-menu',
+    };
+  },
   components: {
-    ContactForm,
+    ContactForm, WellCome,
   },
 });
 </script>
@@ -98,6 +94,11 @@ export default defineComponent({
     width: 100%;
     transition: 0.2s;
   }
+
+  @media screen and (max-width: 320px) {
+    transition: 0.2s;
+    position: block;
+  }
 }
 
 .main-nav {
@@ -105,6 +106,23 @@ export default defineComponent({
   width: 100%;
   @include center-items();
   // justify-content: flex-end;
+  @media screen and (max-width: 320px) {
+    transition: 0.2s;
+  }
+}
+
+.toogle-menu{
+  width: 40px;
+  position: absolute;
+  top: .6rem;
+  right: .6rem;
+  cursor: pointer;
+  z-index: 1;
+
+  @media screen and (min-width: 768px) {
+    display: none;
+    transition: 0.2s;
+  }
 }
 
 .main-menu {
@@ -125,8 +143,12 @@ export default defineComponent({
     align-items: center;
     margin:0;
     transition: 0.3s;
+    transform: translateY(-100%);
   }
+}
 
+.main-menu--show{
+  transform: translateY(0);
 }
 
 .main-menu .nav-link {
@@ -223,6 +245,11 @@ export default defineComponent({
     margin-left: 0;
     transition:0.3s;
   }
+
+  @media screen and (max-width: 320px) {
+    transition:0.3s;
+  }
+
 }
 
 .wall-1 {
@@ -267,8 +294,8 @@ export default defineComponent({
   @media screen and (max-width: 320px) {
     transition:0.2s;
     width: 90%;
+    text-align: center;
   }
-
 }
 
 .wall-content .photo-perfil{
@@ -277,71 +304,10 @@ export default defineComponent({
   border: 5px solid whitesmoke;
 }
 
-.grettings{
-  font-family: var(--font-mono);
-  font-size: 1rem;
-  letter-spacing: -0.2px;
-}
-
-.title-text {
-  font-size: 5.5rem;
-  font-weight:700;
-  letter-spacing: -2px;
-  @include reset-padding-margin();
-}
-
 .subtitle-text {
   font-size: 1rem;
 }
 
-.text-description{
-width: 60%;
-letter-spacing: 0.2px;
-color: var(--font-color-2);
-
-  @media screen and (max-width: 768px) {
-    transition:0.2s;
-    width: 90%;
-  }
-
-  @media screen and (max-width: 425px) {
-    transition:0.2s;
-    width: 90%;
-  }
-
-  @media screen and (max-width: 320px) {
-    transition:0.2s;
-    width: 90%;
-  }
-}
-
-.btn-wellcome{
-  margin: 20px 0;
-  height: 60px;
-  width: 18%;
-  padding: 0 30px;
-  background: none;
-  font-weight: 700;
-  font-size: 1rem;
-  color: var(--color-wall-3);
-  border: 2px solid var(--color-wall-3);
-  border-radius: var(--border-radius);
-  font-family: var(--font-mono);
-
-  &:hover{
-    background: var(--btn-hover-color);
-  }
-
-  @media screen and (max-width: 768px) {
-    transition:0.2s;
-    width: 40%;
-  }
-
-  @media screen and (max-width: 320px) {
-    transition:0.2s;
-    width: 60%;
-  }
-}
 // SEccion social media
 
 .social-media-container{
