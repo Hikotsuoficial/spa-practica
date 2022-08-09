@@ -1,1 +1,35 @@
 /*  felxbox o grid, lo que modifique el layout */
+
+.grid-contact-form {
+  width: 64%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+  }
+
+  @media screen and (max-width: 768px) {
+    transition: 0.2s;
+    width: 100%;
+  }
+
+  @media screen and (max-width: 320px) {
+    grid-template-columns: 1fr;
+    transition: 0.2s;
+    width: 100%;
+  }
+}
+
+.textare-message {
+  grid-column-start: 1;
+  grid-column-end: 3;
+
+  @media screen and (max-width: 320px) {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    transition: 0.2s;
+    width: 100%;
+  }
+}

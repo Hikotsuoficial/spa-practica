@@ -1,10 +1,9 @@
 <template>
-  <h1>Hacemos un proyecto?</h1>
+  <h1 class="title-text">Contáctame</h1>
   <div class="form-container">
-    <h5 class="description__title2">Contáctame</h5>
     <form action="https://formspree.io/f/mgedqodg" method="POST">
-      <ul class="order-form">
-        <li>
+      <div class="grid-contact-form">
+        <div>
           <label class="label" for="name"
             >Nombre
             <input
@@ -17,18 +16,18 @@
               required
             />
           </label>
-        </li>
-        <li>
-          <label class="label" for="mail"
-            >Correo electrónico
+        </div>
+        <div>
+          <label class="label" for="mail">
+            Correo electrónico
             <input class="contact-input" type="email" name="email" required />
           </label>
-        </li>
-        <li>
+        </div>
+        <div class="textare-message">
           <label class="label" for="message"
             >Mensaje
             <textarea
-              class="textareaMsg"
+              class="textarea-msg"
               minlength="20"
               maxlength="400"
               name="message"
@@ -37,9 +36,9 @@
               required
             ></textarea>
           </label>
-        </li>
-        <li><button type="submit">Enviar</button></li>
-      </ul>
+        </div>
+        <button class="btn-send-form" type="submit">Enviar</button>
+      </div>
     </form>
   </div>
 </template>
@@ -47,26 +46,76 @@
 <style lang="scss" scoped>
 @import '@/assets/styles/main.scss';
 
-.order-form{
-    list-style: none;
+.order-form {
+  list-style: none;
 }
-.label{
-    margin: 2rem;
+.form-container{
+    @media screen and (max-width: 1024px) {
+        transition:0.2s;
+        width: 100%;
+        @include center-items()
+      }
 }
-.contact-input{
-    display: block;
-    border-radius: var(--border-radius);
-    border: 1px solid var(--color-border-1);
-    width: 25%;
-    height: 3.5rem;
-    color: var(--font-color-1);
-    background-color: var(--color-wall-4);
-    padding: 0 1rem;
-    margin: 1rem;
-    font-size: 1.2rem;
+.label {
+  margin: 1rem;
+  font-family: var(--font-mono);
+}
+.contact-input {
+  display: block;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-border-1);
+  width: 100%;
+  height: 3rem;
+  color: var(--font-color-1);
+  background-color: var(--color-input-background-1);
+  padding: 0 1rem;
+  margin:.2rem ;
+  font-size: 1.1rem;
 
-    &::placeholder{
-        text-align: center;
-    }
+  &::placeholder {
+    text-align: center;
+  }
+}
+
+.textarea-msg {
+  display: block;
+  font-family: var(--font-sans);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--color-border-1);
+  width: 100%;
+  height: 8rem;
+  color: var(--font-color-1);
+  background-color: var(--color-input-background-1);
+  padding: 1rem 1rem;
+  margin: 0.2rem;
+  font-size: .9rem;
+
+}
+.btn-send-form {
+  margin: 20px 0;
+  height: 60px;
+  width: 36%;
+  padding: 0 30px;
+  background: none;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--color-wall-3);
+  border: 2px solid var(--color-wall-3);
+  border-radius: var(--border-radius);
+  font-family: var(--font-mono);
+
+  &:hover {
+    background: var(--btn-hover-color);
+  }
+
+  @media screen and (max-width: 768px) {
+    transition:0.2s;
+    width: 40%;
+  }
+
+  @media screen and (max-width: 320px) {
+    transition:0.2s;
+    width: 56%;
+  }
 }
 </style>

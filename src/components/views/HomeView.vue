@@ -116,8 +116,17 @@ export default defineComponent({
     display: flex;
     justify-content:center;
     transition: 0.3s;
-
   }
+
+  @media screen and (max-width: 320px) {
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    margin:0;
+    transition: 0.3s;
+  }
+
 }
 
 .main-menu .nav-link {
@@ -249,6 +258,17 @@ export default defineComponent({
   @media screen and (max-width: 768px) {
     transition:0.2s;
   }
+
+  @media screen and (max-width: 425px) {
+    transition:0.2s;
+    width: 90%;
+  }
+
+  @media screen and (max-width: 320px) {
+    transition:0.2s;
+    width: 90%;
+  }
+
 }
 
 .wall-content .photo-perfil{
@@ -279,11 +299,26 @@ width: 60%;
 letter-spacing: 0.2px;
 color: var(--font-color-2);
 
+  @media screen and (max-width: 768px) {
+    transition:0.2s;
+    width: 90%;
+  }
+
+  @media screen and (max-width: 425px) {
+    transition:0.2s;
+    width: 90%;
+  }
+
+  @media screen and (max-width: 320px) {
+    transition:0.2s;
+    width: 90%;
+  }
 }
 
 .btn-wellcome{
   margin: 20px 0;
   height: 60px;
+  width: 18%;
   padding: 0 30px;
   background: none;
   font-weight: 700;
@@ -296,11 +331,21 @@ color: var(--font-color-2);
   &:hover{
     background: var(--btn-hover-color);
   }
+
+  @media screen and (max-width: 768px) {
+    transition:0.2s;
+    width: 40%;
+  }
+
+  @media screen and (max-width: 320px) {
+    transition:0.2s;
+    width: 60%;
+  }
 }
 // SEccion social media
 
 .social-media-container{
-  position:absolute;
+  position:fixed;
   height: 60px;
   color: var(--font-color-2)
 }
