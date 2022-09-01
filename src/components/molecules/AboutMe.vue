@@ -18,8 +18,8 @@
       <div class="perfil-pic-background"></div>
     </section>
     <section class="card-item-3">
-      <h3>skills</h3>
-      <div class="-list-skills">
+      <h2>Skills</h2>
+      <div class="list-skills">
         <div>
           <ul>
             <li>HTML</li>
@@ -29,9 +29,9 @@
         </div>
         <div>
           <ul>
-            <li>HTML</li>
-            <li>JavaScript (ES6+)</li>
-            <li>CSS</li>
+            <li>Grid CSS</li>
+            <li>FlexBox</li>
+            <li>VueJS</li>
           </ul>
         </div>
       </div>
@@ -70,7 +70,6 @@
 .card-item-2,
 .card-item-3 {
   padding: var(--padding-boxes-1);
-  border: var(--box-viewer);
 }
 
 .card-item-1 .card-item-3 {
@@ -89,11 +88,13 @@
 .card-item-3 {
   display: flex;
   flex-direction: column;
+  margin: 10px;
+  padding: var(--padding-boxes-2);
 }
 
 .list-skills {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 40% 40%;
   grid-template-rows: 1fr;
 }
 
