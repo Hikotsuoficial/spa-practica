@@ -44,19 +44,19 @@
 </template>
 
 <style lang="scss" scoped>
-@import '@/assets/styles/main.scss';
+@import "@/assets/styles/main.scss";
 
-.form-container{
-    @media screen and (max-width: 1024px) {
-        transition:0.2s;
-        width: 100%;
-        @include center-items();
-      }
+.form-container {
+  @media screen and (max-width: 1024px) {
+    transition: 0.2s;
+    width: 100%;
+    @include center-items();
+  }
 
-    @media screen and (max-width: 320px) {
-        transition:0.2s;
-        @include center-items();
-      }
+  @media screen and (max-width: 320px) {
+    transition: 0.2s;
+    @include center-items();
+  }
 }
 .label {
   margin: 1rem;
@@ -71,8 +71,9 @@
   color: var(--font-color-1);
   background-color: var(--color-input-background-1);
   padding: 0 1rem;
-  margin:.2rem ;
+  margin: 0.2rem;
   font-size: 1.1rem;
+  outline: none;
 
   &::placeholder {
     text-align: center;
@@ -90,8 +91,8 @@
   background-color: var(--color-input-background-1);
   padding: 1rem 1rem;
   margin: 0.2rem;
-  font-size: .9rem;
-
+  font-size: 0.9rem;
+  outline: none;
 }
 .btn-send-form {
   margin: 20px 0;
@@ -110,23 +111,28 @@
     background: var(--btn-hover-color);
   }
 
+  @media screen and (max-width: 1440px) {
+    transition: 0.2s;
+    width: 60%;
+  }
+
   @media screen and (max-width: 1024px) {
-    transition:0.2s;
+    transition: 0.2s;
     width: 56%;
   }
 
   @media screen and (max-width: 768px) {
-    transition:0.2s;
+    transition: 0.2s;
     width: 40%;
   }
 
   @media screen and (max-width: 425px) {
-    transition:0.2s;
+    transition: 0.2s;
     width: 56%;
   }
 
   @media screen and (max-width: 320px) {
-    transition:0.2s;
+    transition: 0.2s;
     width: 56%;
   }
 }

@@ -2,9 +2,6 @@
   <div class="theme-blue">
     <aside class="aside-menu">
       <nav class="main-nav">
-      <div id="toogle-menu" class="toogle-menu">
-        <!-- <img src="@/assets/media/img/logo.png" alt=""> -->
-      </div>
         <ul id="main-menu" class="main-menu">
           <li class="nav-link"><a href="#wellcome">BIENVENIDO</a></li>
           <li class="nav-link"><a href="#cards">QUIEN SOY</a></li>
@@ -24,18 +21,7 @@
       </div>
       <div class="wall-2" id="cards">
         <section class="wall-content">
-          <h2 class="subtitle-text">Quien soy</h2>
-          <div class="card-container-section">
-            <section class="card-item">
-              <img src="" alt="" />
-            </section>
-            <section class="card-item">
-              <img src="" alt="" />
-            </section>
-            <section class="card-item">
-              <img src="" alt="" />
-            </section>
-          </div>
+          <AboutMe></AboutMe>
         </section>
       </div>
       <div class="wall-1" id="whatwedo">
@@ -61,6 +47,7 @@
 import { defineComponent } from 'vue';
 import ContactForm from '@/components/molecules/ContactForm.vue';
 import WellCome from '@/components/molecules/WellCome.vue';
+import AboutMe from '@/components/molecules/AboutMe.vue';
 
 export default defineComponent({
   name: 'HomeView',
@@ -69,8 +56,13 @@ export default defineComponent({
       show: 'main-menu',
     };
   },
+  methods: {
+    showjuanda() {
+      alert('Estoy funcionando');
+    },
+  },
   components: {
-    ContactForm, WellCome,
+    ContactForm, WellCome, AboutMe,
   },
 });
 </script>
@@ -307,34 +299,11 @@ export default defineComponent({
 .subtitle-text {
   font-size: 1rem;
 }
-
 // SEccion social media
 
 .social-media-container{
   position:fixed;
   height: 60px;
   color: var(--font-color-2)
-}
-
-.card-container-section {
-  border: var(--box-viewer);
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 1fr;
-  justify-content: center;
-  gap: var(--padding-boxes);
-
-  @media screen and (max-width: 1024px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  @media screen and (max-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-.card-item {
-  height: 33%;
-  border: var(--box-viewer);
-  border-radius: var(--border-radius);
 }
 </style>
