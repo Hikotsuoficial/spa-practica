@@ -10,7 +10,7 @@
       <p class="personal-description">
         En la actualidad aun sigo estudiando, y he realizando varios cursos donde he ido mejorando
         mis habilidadas y ampliando la gama de plataformas en las cuales se desarrolla contenido
-        Fron-End.
+        Front-End.
       </p>
     </section>
     <section class="card-item-2">
@@ -18,7 +18,7 @@
       <div class="perfil-pic-background"></div>
     </section>
     <section class="card-item-3">
-      <h2>Skills</h2>
+      <h2 class="title-text">Skills</h2>
       <div class="list-skills">
         <div>
           <ul>
@@ -50,14 +50,12 @@
   justify-content: center;
   gap: var(--padding-boxes-1);
   color: var(--font-color-2);
-  width: 90%;
+  width: 84%;
+  z-index: 1;
 
   @media screen and (max-width: 1024px) {
     grid-template-columns: repeat(2, 1fr);
     width: 100%;
-  }
-  @media screen and (max-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -72,9 +70,10 @@
   padding: var(--padding-boxes-1);
 }
 
-.card-item-1 .card-item-3 {
+.card-item-1,
+.card-item-3 {
   grid-column-start: 1;
-  grid-column-end: 3;
+  grid-column-end: 2;
 }
 
 .card-item-2 {
@@ -93,9 +92,28 @@
 }
 
 .list-skills {
+  margin-left: 20px;
+  margin-top: 10px;
   display: grid;
-  grid-template-columns: 40% 40%;
+  grid-template-columns: 50% 50%;
   grid-template-rows: 1fr;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+}
+
+.list-skills ul {
+  list-style: none;
+}
+
+.list-skills ul li {
+  padding: 3px 0px;
+
+  &::before {
+  content: "\0025B9";
+  margin-left: -20px;
+  margin-right: 10px;
+  color: var(--color-wall-3)
+}
 }
 
 .perfil-pic {
