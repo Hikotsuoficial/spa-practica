@@ -57,6 +57,11 @@
     grid-template-columns: repeat(2, 1fr);
     width: 100%;
   }
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
 }
 
 .personal-description {
@@ -68,27 +73,46 @@
 .card-item-2,
 .card-item-3 {
   padding: var(--padding-boxes-1);
+
+  @media screen and (max-width: 768px) {
+    padding: none;
+  }
 }
 
-.card-item-1,
-.card-item-3 {
+.card-item-1, .card-item-3 {
   grid-column-start: 1;
   grid-column-end: 2;
+
+  @media screen and (max-width: 768px) {
+    grid-column-start: initial;
+    grid-column-end: initial;
+  }
 }
 
 .card-item-2 {
+  display: grid;
   grid-row-start: 1;
   grid-row-end: 3;
   grid-column-start: 2;
   grid-column-end: 3;
   @include center-items();
+
+  @media screen and (max-width: 768px) {
+    grid-row-start: initial;
+    grid-row-end: initial;
+    grid-column-start: initial;
+    grid-column-end: initial;
+  }
 }
 
 .card-item-3 {
   display: flex;
   flex-direction: column;
-  margin: 10px;
   padding: var(--padding-boxes-2);
+
+  @media screen and (max-width: 768px) {
+    align-items: center;
+  }
 }
 
 .list-skills {
@@ -99,6 +123,12 @@
   grid-template-rows: 1fr;
   font-family: var(--font-mono);
   font-size: 0.8rem;
+  @media screen and (max-width: 768px) {
+    align-items: center;
+    margin-left: 0;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+  }
 }
 
 .list-skills ul {
@@ -120,6 +150,10 @@
   width: 280px;
   border-radius: 20% 70% 70% 30% / 30% 30% 70% 70%;
   z-index: 2;
+
+  @media screen and (max-width: 768px) {
+    width: 220px;
+  }
 }
 
 .perfil-pic-background {
@@ -130,5 +164,10 @@
   border-radius: 20% 70% 70% 30% / 30% 30% 70% 70%;
   transform: rotateZ(-50deg);
   transition: background-color 0.3s;
+
+  @media screen and (max-width: 768px) {
+    width: 200px;
+    height: 200px;
+  }
 }
 </style>
